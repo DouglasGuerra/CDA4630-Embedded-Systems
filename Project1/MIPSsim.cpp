@@ -9,24 +9,6 @@
 
 using namespace std;
 
-string to_string(int value){
-    string temp = "", out = "";
-    if(value == 0) temp = value + '0';
-    else{
-        while(value > 0){
-            int tempVal = value % 10;
-            value /= 10;
-            temp += tempVal + '0';
-        }
-    }
-
-    for(int i = temp.length()-1; i >= 0; i--){
-        out += temp[i];
-    }
-
-    return out;
-}
-
 void LoadRegistersOrDataMemory(vector<int> &arr, const char *fileName){
     string line;
     ifstream file(fileName);
